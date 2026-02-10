@@ -5,5 +5,16 @@
         <link>https://raw.githubusercontent.com/adrialp/peekaboo-releases/main/appcast.xml</link>
         <description>Peekaboo updates</description>
         <language>en</language>
+        <item>
+            <title>Version 1.5.0</title>
+            <pubDate>Tue, 10 Feb 2026 08:53:16 +0000</pubDate>
+            <sparkle:version>1.5.0</sparkle:version>
+            <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v1.5.0/Peekaboo.dmg"
+                       sparkle:edSignature="hexWptPPJlmNDaRP6U6Z9U0aOgIVSvrBP2eo+0blAlRPH3BpzJbVbIvL4nZiDNYMnFFwzAaSNOSj+NkjB2UPCQ=="
+                       length="3189408"
+                       type="application/octet-stream" />
+        </item>
     </channel>
 </rss>
