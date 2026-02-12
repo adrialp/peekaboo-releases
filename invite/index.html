@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Peekaboo!</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .card {
+            background: #16213e;
+            border-radius: 20px;
+            padding: 48px 40px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .eyes {
+            font-size: 64px;
+            margin-bottom: 16px;
+            animation: peek 3s ease-in-out infinite;
+        }
+        @keyframes peek {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        h1 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: #8892b0;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        .referral-box {
+            background: #0f3460;
+            border: 2px solid #533483;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .referral-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #8892b0;
+            margin-bottom: 8px;
+        }
+        .referral-code {
+            font-size: 32px;
+            font-weight: 800;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            color: #e94560;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+        .copy-btn {
+            background: #533483;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover { background: #6a42a0; }
+        .copy-btn.copied { background: #2ecc71; }
+        .download-btn {
+            display: inline-block;
+            background: #e94560;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            padding: 16px 40px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin-bottom: 20px;
+        }
+        .download-btn:hover {
+            background: #ff6b81;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(233,69,96,0.3);
+        }
+        .steps {
+            text-align: left;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #2a2a4a;
+        }
+        .steps h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8892b0;
+            margin-bottom: 12px;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.4;
+        }
+        .step-num {
+            background: #533483;
+            color: #fff;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .footer {
+            margin-top: 32px;
+            font-size: 12px;
+            color: #4a4a6a;
+        }
+        .no-ref { color: #e94560; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="eyes">👀</div>
+        <h1>Your friend invited you to try Peekaboo!</h1>
+        <p class="subtitle">Animated eyes that live next to your MacBook notch. They follow your cursor, blink, and react to what you do.</p>
+
+        <div id="referral-section" class="referral-box">
+            <div class="referral-label">Your referral code</div>
+            <div class="referral-code" id="ref-code">--------</div>
+            <button class="copy-btn" id="copy-btn" onclick="copyCode()">Copy Code</button>
+        </div>
+
+        <a id="download-btn" class="download-btn" href="https://github.com/adrialp/peekaboo-releases/releases/latest" target="_blank">
+            Download Peekaboo
+        </a>
+
+        <div class="steps">
+            <h3>How to get your reward</h3>
+            <div class="step">
+                <span class="step-num">1</span>
+                <span>Download and install Peekaboo</span>
+            </div>
+            <div class="step">
+                <span class="step-num">2</span>
+                <span>Click the eyes next to your notch to open the menu</span>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span>
+                <span>Tap <strong>"Enter Secret Code"</strong> and paste the code above</span>
+            </div>
+            <div class="step">
+                <span class="step-num">4</span>
+                <span>Both you and your friend unlock a surprise eye style!</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">Peekaboo — Made with ❤️ for MacBook</div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const refCode = params.get('ref');
+        const codeEl = document.getElementById('ref-code');
+        const copyBtn = document.getElementById('copy-btn');
+
+        if (refCode && /^[0-9A-F]{8}$/.test(refCode)) {
+            codeEl.textContent = refCode;
+            // Auto-copy to clipboard on page load
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(refCode).catch(() => {});
+            }
+        } else {
+            codeEl.textContent = '---';
+            codeEl.classList.add('no-ref');
+            document.getElementById('referral-section').style.display = 'none';
+        }
+
+        function copyCode() {
+            const code = codeEl.textContent;
+            if (code === '---') return;
+            navigator.clipboard.writeText(code).then(() => {
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy Code';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
