@@ -236,5 +236,16 @@
                        length="4851304"
                        type="application/octet-stream" />
         </item>
+        <item>
+            <title>Version 2.3.6</title>
+            <pubDate>Mon, 16 Feb 2026 00:59:24 +0000</pubDate>
+            <sparkle:version>2.3.6</sparkle:version>
+            <sparkle:shortVersionString>2.3.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.3.6/Peekaboo.dmg"
+                       sparkle:edSignature="w/jjOWJ8t5UGVj3PwQsLZO0BKQNOtDdj+jnUInM2wL0LLrbfCrFaJ2hOtELv9NEn190QXtHbK2Ka2zWPSiAWAQ=="
+                       length="4921400"
+                       type="application/octet-stream" />
+        </item>
     </channel>
 </rss>
