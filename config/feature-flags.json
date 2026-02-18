@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "defaults": {
     "screen_time_light": false,
     "screen_time_pro": false,
@@ -10,9 +10,14 @@
   "users": {
     "3d45f7870fc9e6cfe97710d67f2e077007a3975d3334d7aa0d8e124e467a17f8": {
       "screen_time_light": true,
-      "screen_time_pro": false,
+      "screen_time_pro": true,
       "debug_mode": true,
       "diagnostic_mode": true,
+      "qa_mode": true
+    },
+    "bcb9d00685f88edb89d66eaf39b98ce3761d9afe48383066a9bc2966eedac9fa": {
+      "screen_time_light": true,
+      "screen_time_pro": true,
       "qa_mode": true
     }
   }
