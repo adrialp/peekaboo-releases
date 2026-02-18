@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "defaults": {
+    "screen_time_light": false,
+    "screen_time_pro": false,
+    "debug_mode": false,
+    "diagnostic_mode": false,
+    "achievements": false
+  },
+  "users": {
+    "3d45f7870fc9e6cfe97710d67f2e077007a3975d3334d7aa0d8e124e467a17f8": {
+      "screen_time_light": true,
+      "screen_time_pro": false,
+      "debug_mode": true,
+      "diagnostic_mode": true,
+      "qa_mode": true
+    }
+  }
+}
