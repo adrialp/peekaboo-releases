@@ -391,10 +391,10 @@
                        type="application/octet-stream" />
         </item>
         <item>
-            <title>Version v2.7.1</title>
+            <title>Version 2.7.1</title>
             <pubDate>Sun, 22 Feb 2026 02:53:59 +0000</pubDate>
-            <sparkle:version>v2.7.1</sparkle:version>
-            <sparkle:shortVersionString>v2.7.1</sparkle:shortVersionString>
+            <sparkle:version>2.7.1</sparkle:version>
+            <sparkle:shortVersionString>2.7.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/vv2.7.1/Peekaboo.dmg"
                        sparkle:edSignature="cEW0fu5wt4gf761jcJPU4dOy0Tjm1vY/LlFO16xIRNj98LL/d5JhC3Z0dCSLzCHLvYMZkW2b4cGYZaZwTyuRCg=="
@@ -402,10 +402,10 @@
                        type="application/octet-stream" />
         </item>
         <item>
-            <title>Version v2.7.2</title>
+            <title>Version 2.7.2</title>
             <pubDate>Sun, 22 Feb 2026 14:36:29 +0000</pubDate>
-            <sparkle:version>v2.7.2</sparkle:version>
-            <sparkle:shortVersionString>v2.7.2</sparkle:shortVersionString>
+            <sparkle:version>2.7.2</sparkle:version>
+            <sparkle:shortVersionString>2.7.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/vv2.7.2/Peekaboo.dmg"
                        sparkle:edSignature="ApRDBO1fcaFoF9TMcQhMkug2PmPjAprXb2aYRHE99x2adu4wZU8Aksjn9HaCt57vA6BvYeuBld5dP7BzU1mEDg=="
@@ -413,14 +413,14 @@
                        type="application/octet-stream" />
         </item>
         <item>
-            <title>Version v2.7.3</title>
+            <title>Version 2.7.3</title>
             <pubDate>Sun, 22 Feb 2026 14:55:37 +0000</pubDate>
-            <sparkle:version>v2.7.3</sparkle:version>
-            <sparkle:shortVersionString>v2.7.3</sparkle:shortVersionString>
+            <sparkle:version>2.7.3</sparkle:version>
+            <sparkle:shortVersionString>2.7.3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/vv2.7.3/Peekaboo.dmg"
-                       sparkle:edSignature="LXtaA/hHWAh9XlX5dPFNhPORgg75IDUZr1nnEdLSMp39Y3Vz3VwUY1MuYRqFCZZRZ+kH7yPAWaoVJhLovgODCA=="
-                       length="6030921"
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.7.3/Peekaboo.dmg"
+                       sparkle:edSignature="EPWmVWBVNwScMB8EyBTMlQDo7wsaDUDtN8WI6CexxLjG+EKHW4rd3JlzH2I1GaD91C7yLWXwRUf4W2RNtH1RCA=="
+                       length="6030952"
                        type="application/octet-stream" />
         </item>
     </channel>
