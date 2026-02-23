@@ -434,5 +434,16 @@
                        length="6044413"
                        type="application/octet-stream" />
         </item>
+        <item>
+            <title>Version 2.7.5</title>
+            <pubDate>Mon, 23 Feb 2026 01:59:07 +0000</pubDate>
+            <sparkle:version>2.7.5</sparkle:version>
+            <sparkle:shortVersionString>2.7.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.7.5/Peekaboo.dmg"
+                       sparkle:edSignature="Qe97/2otml352040X4zhqm2H3jiVr3iA19K0zeqmmYKNNEaoWapAAvbsXPT/WxV/valib6qkWm8hOyWTzQ+rAw=="
+                       length="6044315"
+                       type="application/octet-stream" />
+        </item>
     </channel>
 </rss>
