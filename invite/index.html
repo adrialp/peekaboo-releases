@@ -17,6 +17,7 @@
       --accent-disabled: #4A3020;
       --code-bg: #111111;
       --success: #34C759;
+      --error: #FF3B30;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -80,6 +81,10 @@
       border-color: var(--success);
     }
 
+    .code-box.error {
+      border-color: var(--error);
+    }
+
     .code-label {
       font-size: 13px;
       color: var(--text-secondary);
@@ -118,6 +123,10 @@
       color: var(--success);
     }
 
+    .code-hint.error {
+      color: var(--error);
+    }
+
     .download-btn {
       display: inline-flex;
       align-items: center;
@@ -134,7 +143,7 @@
       text-decoration: none;
       transition: background 0.15s, opacity 0.2s;
       width: 100%;
-      margin-bottom: 16px;
+      margin-bottom: 32px;
     }
 
     .download-btn:hover:not(.disabled) { background: var(--accent-hover); }
@@ -221,12 +230,6 @@
       color: var(--accent);
       text-decoration: none;
     }
-
-    .requires {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-    }
   </style>
 </head>
 <body>
@@ -252,21 +255,19 @@
       Download Peekaboo
     </a>
 
-    <p class="requires">Requires macOS 15+ with a notch display</p>
-
     <div class="steps">
-      <h2>How to activate</h2>
+      <h2>How it works</h2>
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-text">Type your invite code above and <strong>download Peekaboo</strong></div>
+        <div class="step-text">Enter your invite code above to <strong>unlock the download</strong></div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text">Open the Command Menu with <kbd>&#8984;</kbd> <kbd>&#8679;</kbd> <kbd>P</kbd></div>
+        <div class="step-text">Download and open <strong>Peekaboo.app</strong></div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text">Type your invite code again and press <strong>Enter</strong></div>
+        <div class="step-text">Open the Command Menu with <kbd>&#8984;</kbd> <kbd>&#8679;</kbd> <kbd>P</kbd> and type your code</div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
@@ -284,22 +285,24 @@
     const DOWNLOAD_URL = "https://github.com/adrialp/peekaboo-releases/releases/latest/download/Peekaboo.dmg";
     const CODE_PATTERN = /^PEEK-[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{5}$/;
 
-    // Parse code from URL (used for validation, not displayed)
-    const params = new URLSearchParams(window.location.search);
-    const expectedCode = (params.get("code") || params.get("ref") || "").toUpperCase();
-
     const codeInput = document.getElementById("codeInput");
     const codeBox = document.getElementById("codeBox");
     const codeHint = document.getElementById("codeHint");
     const downloadBtn = document.getElementById("downloadBtn");
     let unlocked = false;
+    let validating = false;
+    let debounceTimer = null;
+
+    // Parse code from URL for tracking only
+    const params = new URLSearchParams(window.location.search);
+    const urlCode = (params.get("code") || params.get("ref") || "").toUpperCase();
 
     // Track page view
-    if (expectedCode && CODE_PATTERN.test(expectedCode)) {
+    if (urlCode && CODE_PATTERN.test(urlCode)) {
       fetch(`${API_BASE}/referral/track`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code: expectedCode, event: "page_view" }),
+        body: JSON.stringify({ code: urlCode, event: "page_view" }),
       }).catch(() => {});
     }
 
@@ -307,57 +310,84 @@
     codeInput.addEventListener("input", function() {
       let val = this.value.toUpperCase().replace(/[^23456789ABCDEFGHJKMNPQRSTUVWXYZ-]/g, "");
 
-      // Auto-insert dash: if user types "PEEK" without dash, add it
       if (val.length === 4 && val === "PEEK") {
         val = "PEEK-";
       }
-      // If they paste/type without the prefix, try to fix it
       if (val.length >= 5 && !val.startsWith("PEEK-") && val.startsWith("PEEK")) {
         val = "PEEK-" + val.slice(4);
       }
 
       this.value = val;
-      checkCode(val);
-    });
 
-    // Also check on paste
-    codeInput.addEventListener("paste", function() {
-      setTimeout(() => {
-        this.value = this.value.toUpperCase();
-        checkCode(this.value);
-      }, 0);
-    });
+      // Reset state while typing
+      unlocked = false;
+      downloadBtn.className = "download-btn disabled";
+      codeBox.className = "code-box";
 
-    function checkCode(input) {
-      const val = input.trim().toUpperCase();
+      // Debounce server validation
+      clearTimeout(debounceTimer);
 
       if (CODE_PATTERN.test(val)) {
-        // Valid code format — check if it matches the URL code (if present)
-        if (!expectedCode || val === expectedCode) {
-          unlock(val);
-        } else {
-          // Valid format but doesn't match the URL code
-          codeHint.textContent = "This code doesn't match your invite link";
-          codeHint.className = "code-hint";
-          codeBox.className = "code-box";
-          downloadBtn.className = "download-btn disabled";
-          unlocked = false;
-        }
+        codeHint.textContent = "Checking code...";
+        codeHint.className = "code-hint";
+        debounceTimer = setTimeout(() => validateCode(val), 300);
       } else {
         codeHint.textContent = val.length > 0 ? "Keep typing..." : "Your friend should have shared a code with you";
         codeHint.className = "code-hint";
-        codeBox.className = "code-box";
-        downloadBtn.className = "download-btn disabled";
-        unlocked = false;
       }
-    }
+    });
 
-    function unlock(code) {
-      unlocked = true;
-      codeBox.className = "code-box matched";
-      codeHint.textContent = "Code accepted — download is ready!";
-      codeHint.className = "code-hint success";
-      downloadBtn.className = "download-btn";
+    codeInput.addEventListener("paste", function() {
+      setTimeout(() => {
+        this.value = this.value.toUpperCase();
+        this.dispatchEvent(new Event("input"));
+      }, 0);
+    });
+
+    async function validateCode(code) {
+      if (validating) return;
+      validating = true;
+
+      try {
+        const res = await fetch(`${API_BASE}/referral/validate`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code }),
+        });
+
+        const data = await res.json();
+
+        // Make sure user hasn't changed the input while we were validating
+        if (codeInput.value.toUpperCase() !== code) {
+          validating = false;
+          return;
+        }
+
+        if (data.ok && data.valid) {
+          unlocked = true;
+          codeBox.className = "code-box matched";
+          codeHint.textContent = "Code accepted — download is ready!";
+          codeHint.className = "code-hint success";
+          downloadBtn.className = "download-btn";
+        } else if (data.error === "code_already_used") {
+          codeBox.className = "code-box error";
+          codeHint.textContent = "This code has already been used";
+          codeHint.className = "code-hint error";
+        } else if (data.error === "unknown_code") {
+          codeBox.className = "code-box error";
+          codeHint.textContent = "This invite code doesn't exist";
+          codeHint.className = "code-hint error";
+        } else {
+          codeBox.className = "code-box error";
+          codeHint.textContent = "Invalid code — check with your friend";
+          codeHint.className = "code-hint error";
+        }
+      } catch (e) {
+        codeHint.textContent = "Couldn't verify — check your connection";
+        codeHint.className = "code-hint error";
+      }
+
+      validating = false;
     }
 
     // Download button
@@ -367,19 +397,16 @@
 
       const code = codeInput.value.trim().toUpperCase();
 
-      // Track download click
       fetch(`${API_BASE}/referral/track`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code, event: "download_click" }),
       }).catch(() => {});
 
-      // Start download
       window.location.href = DOWNLOAD_URL;
     });
 
-    // If code is in URL, focus input with hint
-    if (expectedCode) {
+    if (urlCode) {
       codeInput.focus();
     }
   </script>
