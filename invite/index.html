@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src https://peekaboo-api.adrialp.workers.dev; frame-ancestors 'none';">
   <title>Peekaboo — Your friend invited you!</title>
   <meta name="description" content="Peekaboo brings your MacBook notch to life with animated eyes that follow your cursor.">
   <style>
@@ -246,7 +247,7 @@
 
     <div class="code-box" id="codeBox">
       <div class="code-label">Type your invite code to download</div>
-      <input class="code-input" id="codeInput" type="text" maxlength="10" placeholder="PEEK-XXXXX" autocomplete="off" spellcheck="false">
+      <input class="code-input" id="codeInput" type="text" maxlength="12" placeholder="PEEK-XXXXXXX" autocomplete="off" spellcheck="false">
     </div>
     <p class="code-hint" id="codeHint">Your friend should have shared a code with you</p>
 
@@ -283,7 +284,7 @@
   <script>
     const API_BASE = "https://peekaboo-api.adrialp.workers.dev";
     const DOWNLOAD_URL = "https://github.com/adrialp/peekaboo-releases/releases/latest/download/Peekaboo.dmg";
-    const CODE_PATTERN = /^PEEK-[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{5}$/;
+    const CODE_PATTERN = /^PEEK-[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{7}$/;
 
     const codeInput = document.getElementById("codeInput");
     const codeBox = document.getElementById("codeBox");
