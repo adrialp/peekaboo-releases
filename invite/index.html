@@ -16,9 +16,9 @@
       --text: #EDEDED;
       --text-secondary: rgba(255, 255, 255, 0.5);
       --text-tertiary: rgba(255, 255, 255, 0.3);
-      --accent: #FF6B35;
-      --accent-soft: rgba(255, 107, 53, 0.15);
-      --accent-glow: rgba(255, 107, 53, 0.08);
+      --accent: #FFFFFF;
+      --accent-soft: rgba(255, 255, 255, 0.10);
+      --accent-glow: rgba(255, 255, 255, 0.06);
       --success: #00D47E;
       --success-soft: rgba(0, 212, 126, 0.12);
       --error: #FF4545;
@@ -51,7 +51,7 @@
       transform: translateX(-50%);
       width: 800px;
       height: 600px;
-      background: radial-gradient(ellipse, rgba(255, 107, 53, 0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
@@ -85,7 +85,7 @@
       height: 6px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 8px rgba(255, 107, 53, 0.5);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
 
     /* Logo */
@@ -209,7 +209,7 @@
       justify-content: center;
       gap: 10px;
       background: var(--accent);
-      color: white;
+      color: #000000;
       font-size: 15px;
       font-weight: 600;
       padding: 14px 32px;
@@ -220,12 +220,12 @@
       transition: all 0.2s ease;
       width: 100%;
       letter-spacing: -0.01em;
-      box-shadow: 0 0 20px rgba(255, 107, 53, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .download-btn:hover:not(.disabled) {
-      background: #FF7D4F;
-      box-shadow: 0 0 30px rgba(255, 107, 53, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
       transform: translateY(-1px);
     }
 
@@ -234,7 +234,7 @@
     }
 
     .download-btn.disabled {
-      background: rgba(255, 107, 53, 0.1);
+      background: rgba(255, 255, 255, 0.06);
       color: rgba(255, 255, 255, 0.2);
       cursor: not-allowed;
       pointer-events: none;
