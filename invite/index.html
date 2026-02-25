@@ -422,7 +422,6 @@
 
   <script>
     const API_BASE = "https://peekaboo-api.adrialp.workers.dev";
-    const DOWNLOAD_URL = "https://github.com/adrialp/peekaboo-releases/releases/latest/download/Peekaboo.dmg";
     const CODE_PATTERN = /^PEEK-[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{7}$/;
 
     const codeInput = document.getElementById("codeInput");
@@ -432,6 +431,7 @@
     let unlocked = false;
     let validating = false;
     let debounceTimer = null;
+    let downloadToken = null;
 
     // Parse code from URL for tracking only
     const params = new URLSearchParams(window.location.search);
@@ -461,6 +461,7 @@
 
       // Reset state while typing
       unlocked = false;
+      downloadToken = null;
       downloadBtn.className = "download-btn disabled";
       codeBox.className = "code-box";
 
@@ -503,8 +504,9 @@
           return;
         }
 
-        if (data.ok && data.valid) {
+        if (data.ok && data.valid && data.download_token) {
           unlocked = true;
+          downloadToken = data.download_token;
           codeBox.className = "code-box matched";
           codeHint.textContent = "Code accepted \u2014 download is ready!";
           codeHint.className = "code-hint success";
@@ -530,20 +532,12 @@
       validating = false;
     }
 
-    // Download button
+    // Download button — uses one-time token from server
     downloadBtn.addEventListener("click", function(e) {
       e.preventDefault();
-      if (!unlocked) return;
+      if (!unlocked || !downloadToken) return;
 
-      const code = codeInput.value.trim().toUpperCase();
-
-      fetch(`${API_BASE}/referral/track`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code, event: "download_click" }),
-      }).catch(() => {});
-
-      window.location.href = DOWNLOAD_URL;
+      window.location.href = `${API_BASE}/download?token=${downloadToken}`;
     });
 
     if (urlCode) {
