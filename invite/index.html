@@ -14,7 +14,9 @@
       --text-secondary: #888888;
       --accent: #FF6B35;
       --accent-hover: #FF8555;
+      --accent-disabled: #4A3020;
       --code-bg: #111111;
+      --success: #34C759;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -70,7 +72,12 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 20px;
-      margin-bottom: 32px;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+
+    .code-box.matched {
+      border-color: var(--success);
     }
 
     .code-label {
@@ -78,15 +85,37 @@
       color: var(--text-secondary);
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
-    .code-value {
+    .code-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
       font-size: 28px;
       font-weight: 700;
       font-family: 'SF Mono', 'Menlo', 'Courier New', monospace;
       letter-spacing: 2px;
       color: var(--accent);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .code-input::placeholder {
+      color: #333;
+    }
+
+    .code-hint {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      min-height: 20px;
+      transition: color 0.2s;
+    }
+
+    .code-hint.success {
+      color: var(--success);
     }
 
     .download-btn {
@@ -103,12 +132,19 @@
       border: none;
       cursor: pointer;
       text-decoration: none;
-      transition: background 0.15s;
+      transition: background 0.15s, opacity 0.2s;
       width: 100%;
       margin-bottom: 16px;
     }
 
-    .download-btn:hover { background: var(--accent-hover); }
+    .download-btn:hover:not(.disabled) { background: var(--accent-hover); }
+
+    .download-btn.disabled {
+      background: var(--accent-disabled);
+      color: #666;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
 
     .download-btn svg {
       width: 20px;
@@ -205,12 +241,13 @@
       that lives in your MacBook notch.
     </p>
 
-    <div class="code-box">
-      <div class="code-label">Your invite code</div>
-      <div class="code-value" id="code">—</div>
+    <div class="code-box" id="codeBox">
+      <div class="code-label">Type your invite code to download</div>
+      <input class="code-input" id="codeInput" type="text" maxlength="10" placeholder="PEEK-XXXXX" autocomplete="off" spellcheck="false">
     </div>
+    <p class="code-hint" id="codeHint">Your friend should have shared a code with you</p>
 
-    <a class="download-btn" id="downloadBtn" href="#">
+    <a class="download-btn disabled" id="downloadBtn" href="#">
       <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>
       Download Peekaboo
     </a>
@@ -221,15 +258,15 @@
       <h2>How to activate</h2>
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-text">Download and open <strong>Peekaboo.app</strong></div>
+        <div class="step-text">Type your invite code above and <strong>download Peekaboo</strong></div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text">Open the Command Menu with <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>P</kbd></div>
+        <div class="step-text">Open the Command Menu with <kbd>&#8984;</kbd> <kbd>&#8679;</kbd> <kbd>P</kbd></div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text">Type your invite code <strong id="codeInline">—</strong> and press Enter</div>
+        <div class="step-text">Type your invite code again and press <strong>Enter</strong></div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
@@ -245,40 +282,106 @@
   <script>
     const API_BASE = "https://peekaboo-api.adrialp.workers.dev";
     const DOWNLOAD_URL = "https://github.com/adrialp/peekaboo-releases/releases/latest/download/Peekaboo.dmg";
+    const CODE_PATTERN = /^PEEK-[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{5}$/;
 
-    // Parse code from URL
+    // Parse code from URL (used for validation, not displayed)
     const params = new URLSearchParams(window.location.search);
-    const code = params.get("code") || params.get("ref");
+    const expectedCode = (params.get("code") || params.get("ref") || "").toUpperCase();
 
-    if (code) {
-      const upper = code.toUpperCase();
-      document.getElementById("code").textContent = upper;
-      document.getElementById("codeInline").textContent = upper;
+    const codeInput = document.getElementById("codeInput");
+    const codeBox = document.getElementById("codeBox");
+    const codeHint = document.getElementById("codeHint");
+    const downloadBtn = document.getElementById("downloadBtn");
+    let unlocked = false;
 
-      // Track page view
+    // Track page view
+    if (expectedCode && CODE_PATTERN.test(expectedCode)) {
       fetch(`${API_BASE}/referral/track`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code: upper, event: "page_view" }),
+        body: JSON.stringify({ code: expectedCode, event: "page_view" }),
       }).catch(() => {});
     }
 
+    // Auto-insert dash after "PEEK"
+    codeInput.addEventListener("input", function() {
+      let val = this.value.toUpperCase().replace(/[^23456789ABCDEFGHJKMNPQRSTUVWXYZ-]/g, "");
+
+      // Auto-insert dash: if user types "PEEK" without dash, add it
+      if (val.length === 4 && val === "PEEK") {
+        val = "PEEK-";
+      }
+      // If they paste/type without the prefix, try to fix it
+      if (val.length >= 5 && !val.startsWith("PEEK-") && val.startsWith("PEEK")) {
+        val = "PEEK-" + val.slice(4);
+      }
+
+      this.value = val;
+      checkCode(val);
+    });
+
+    // Also check on paste
+    codeInput.addEventListener("paste", function() {
+      setTimeout(() => {
+        this.value = this.value.toUpperCase();
+        checkCode(this.value);
+      }, 0);
+    });
+
+    function checkCode(input) {
+      const val = input.trim().toUpperCase();
+
+      if (CODE_PATTERN.test(val)) {
+        // Valid code format — check if it matches the URL code (if present)
+        if (!expectedCode || val === expectedCode) {
+          unlock(val);
+        } else {
+          // Valid format but doesn't match the URL code
+          codeHint.textContent = "This code doesn't match your invite link";
+          codeHint.className = "code-hint";
+          codeBox.className = "code-box";
+          downloadBtn.className = "download-btn disabled";
+          unlocked = false;
+        }
+      } else {
+        codeHint.textContent = val.length > 0 ? "Keep typing..." : "Your friend should have shared a code with you";
+        codeHint.className = "code-hint";
+        codeBox.className = "code-box";
+        downloadBtn.className = "download-btn disabled";
+        unlocked = false;
+      }
+    }
+
+    function unlock(code) {
+      unlocked = true;
+      codeBox.className = "code-box matched";
+      codeHint.textContent = "Code accepted — download is ready!";
+      codeHint.className = "code-hint success";
+      downloadBtn.className = "download-btn";
+    }
+
     // Download button
-    document.getElementById("downloadBtn").addEventListener("click", function(e) {
+    downloadBtn.addEventListener("click", function(e) {
       e.preventDefault();
+      if (!unlocked) return;
+
+      const code = codeInput.value.trim().toUpperCase();
 
       // Track download click
-      if (code) {
-        fetch(`${API_BASE}/referral/track`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ code: code.toUpperCase(), event: "download_click" }),
-        }).catch(() => {});
-      }
+      fetch(`${API_BASE}/referral/track`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code, event: "download_click" }),
+      }).catch(() => {});
 
       // Start download
       window.location.href = DOWNLOAD_URL;
     });
+
+    // If code is in URL, focus input with hint
+    if (expectedCode) {
+      codeInput.focus();
+    }
   </script>
 </body>
 </html>
