@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src https://peekaboo-api.adrialp.workers.dev; frame-ancestors 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' https://cdn.amplitude.com; style-src 'unsafe-inline'; img-src data:; connect-src https://peekaboo-api.adrialp.workers.dev https://api.eu.amplitude.com; frame-ancestors 'none';">
+  <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz"></script>
+  <script>window.amplitude.init('7fb0f824535a186518bc413b02f9b9a2', { serverZone: 'EU' });</script>
   <title>Peekaboo — Your friend invited you!</title>
   <meta name="description" content="Peekaboo brings your MacBook notch to life with animated eyes that follow your cursor.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' viewBox='0 0 32 32'%3E%3Crect fill='%23000' width='32' height='32' rx='6'/%3E%3Cellipse cx='11.5' cy='16' rx='4' ry='4.5' fill='%23fff'/%3E%3Cellipse cx='20.5' cy='16' rx='4' ry='4.5' fill='%23fff'/%3E%3Ccircle cx='12.5' cy='16' r='2' fill='%23000'/%3E%3Ccircle cx='21.5' cy='16' r='2' fill='%23000'/%3E%3C/svg%3E">
@@ -438,6 +440,7 @@
     const urlCode = (params.get("code") || params.get("ref") || "").toUpperCase();
 
     // Track page view
+    amplitude.track('web_page_view', { referral_code: urlCode || null, source: document.referrer || 'direct' });
     if (urlCode && CODE_PATTERN.test(urlCode)) {
       fetch(`${API_BASE}/referral/track`, {
         method: "POST",
@@ -469,6 +472,7 @@
       clearTimeout(debounceTimer);
 
       if (CODE_PATTERN.test(val)) {
+        amplitude.track('web_code_entered', { code: val });
         codeHint.textContent = "Checking code\u2026";
         codeHint.className = "code-hint";
         debounceTimer = setTimeout(() => validateCode(val), 300);
@@ -505,6 +509,7 @@
         }
 
         if (data.ok && data.valid && data.download_token) {
+          amplitude.track('web_code_validated', { code, result: 'success' });
           unlocked = true;
           downloadToken = data.download_token;
           codeBox.className = "code-box matched";
@@ -512,14 +517,17 @@
           codeHint.className = "code-hint success";
           downloadBtn.className = "download-btn";
         } else if (data.error === "code_already_used") {
+          amplitude.track('web_code_validated', { code, result: data.error });
           codeBox.className = "code-box error";
           codeHint.textContent = "This code has already been used";
           codeHint.className = "code-hint error";
         } else if (data.error === "unknown_code") {
+          amplitude.track('web_code_validated', { code, result: data.error });
           codeBox.className = "code-box error";
           codeHint.textContent = "This invite code doesn\u2019t exist";
           codeHint.className = "code-hint error";
         } else {
+          amplitude.track('web_code_validated', { code, result: data.error || 'invalid' });
           codeBox.className = "code-box error";
           codeHint.textContent = "Invalid code \u2014 check with your friend";
           codeHint.className = "code-hint error";
@@ -537,6 +545,7 @@
       e.preventDefault();
       if (!unlocked || !downloadToken) return;
 
+      amplitude.track('web_download_clicked', { code: codeInput.value.toUpperCase() });
       window.location.href = `${API_BASE}/download?token=${downloadToken}`;
     });
 
