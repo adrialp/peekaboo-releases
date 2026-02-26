@@ -588,5 +588,16 @@
                        length="9655513"
                        type="application/octet-stream" />
         </item>
+        <item>
+            <title>Version 2.8.13</title>
+            <pubDate>Thu, 26 Feb 2026 20:16:14 +0000</pubDate>
+            <sparkle:version>2.8.13</sparkle:version>
+            <sparkle:shortVersionString>2.8.13</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.13/Peekaboo.dmg"
+                       sparkle:edSignature="vK9gBhT1oI5mH+ievqtls34LrNpqxaGsRkBSvE7fQslP7cXucWk5KwzwRbB9OReASL1XpF7im1GN6MNZodaHDQ=="
+                       length="9656466"
+                       type="application/octet-stream" />
+        </item>
     </channel>
 </rss>
