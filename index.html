@@ -549,7 +549,14 @@
       window.location.href = `${API_BASE}/download?token=${downloadToken}`;
     });
 
-    if (urlCode) {
+    // Auto-fill and validate if code is in URL
+    if (urlCode && CODE_PATTERN.test(urlCode)) {
+      codeInput.value = urlCode;
+      codeHint.textContent = "Checking code\u2026";
+      codeHint.className = "code-hint";
+      validateCode(urlCode);
+    } else if (urlCode) {
+      codeInput.value = urlCode;
       codeInput.focus();
     }
   </script>
