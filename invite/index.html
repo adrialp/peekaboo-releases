@@ -407,11 +407,7 @@
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text">Open the Command Menu with <kbd>&#8984;</kbd> <kbd>&#8679;</kbd> <kbd>P</kbd> and type your code</div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-text">Both you and your friend get a <strong>reward</strong></div>
+        <div class="step-text">Your code activates <strong>automatically</strong> — both you and your friend get a reward</div>
       </div>
     </div>
 
@@ -534,12 +530,28 @@
     }
 
     // Download button — uses one-time token from server
-    downloadBtn.addEventListener("click", function(e) {
+    downloadBtn.addEventListener("click", async function(e) {
       e.preventDefault();
       if (!unlocked || !downloadToken) return;
 
-      // Track download_click with sendBeacon to survive page navigation
       const clickCode = codeInput.value.toUpperCase();
+
+      // Copy code to clipboard so the app can auto-detect it on first launch
+      try {
+        await navigator.clipboard.writeText(clickCode);
+      } catch (_) {
+        // Fallback for older browsers / no permissions
+        const ta = document.createElement("textarea");
+        ta.value = clickCode;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+
+      // Track download_click with sendBeacon to survive page navigation
       const trackPayload = JSON.stringify({ code: clickCode, event: "download_click" });
       if (navigator.sendBeacon) {
         navigator.sendBeacon(`${API_BASE}/referral/track`, new Blob([trackPayload], { type: "application/json" }));
