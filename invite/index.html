@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' https://cdn.amplitude.com; style-src 'unsafe-inline'; img-src data:; connect-src https://peekaboo-api.adrialp.workers.dev https://api.eu.amplitude.com; frame-ancestors 'none';">
-  <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz"></script>
-  <script>window.amplitude.init('7fb0f824535a186518bc413b02f9b9a2', { serverZone: 'EU' });</script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src https://peekaboo-api.adrialp.workers.dev; frame-ancestors 'none';">
   <title>Peekaboo — Your friend invited you!</title>
   <meta name="description" content="Peekaboo brings your MacBook notch to life with animated eyes that follow your cursor.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' viewBox='0 0 32 32'%3E%3Crect fill='%23000' width='32' height='32' rx='6'/%3E%3Cellipse cx='11.5' cy='16' rx='4' ry='4.5' fill='%23fff'/%3E%3Cellipse cx='20.5' cy='16' rx='4' ry='4.5' fill='%23fff'/%3E%3Ccircle cx='12.5' cy='16' r='2' fill='%23000'/%3E%3Ccircle cx='21.5' cy='16' r='2' fill='%23000'/%3E%3C/svg%3E">
@@ -356,21 +354,6 @@
       color: var(--text);
     }
 
-    /* Spinner */
-    .spinner {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      border: 2px solid rgba(0, 0, 0, 0.2);
-      border-top-color: #000;
-      border-radius: 50%;
-      animation: spin 0.6s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
     /* Mobile responsive */
     @media (max-width: 520px) {
       body { padding: 40px 20px; }
@@ -405,9 +388,10 @@
       <p class="code-hint" id="codeHint">Your friend should have shared a code with you</p>
     </div>
 
-    <button class="download-btn disabled" id="actionBtn" type="button">
-      <span id="btnLabel">Validate Code</span>
-    </button>
+    <a class="download-btn disabled" id="downloadBtn" href="#">
+      <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>
+      Download Peekaboo
+    </a>
 
     <div class="divider"></div>
 
@@ -415,15 +399,19 @@
       <div class="steps-title">How it works</div>
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-text"><strong>Validate</strong> your invite code and <strong>download</strong> Peekaboo</div>
+        <div class="step-text">Enter your invite code above to <strong>unlock the download</strong></div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text">Open <strong>Peekaboo.app</strong> and let it live on your notch</div>
+        <div class="step-text">Download and open <strong>Peekaboo.app</strong></div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text">Open the Command Menu with <kbd>&#8984;</kbd> <kbd>&#8679;</kbd> <kbd>P</kbd> and enter your code to <strong>unlock rewards</strong></div>
+        <div class="step-text">Open the Command Menu with <kbd>&#8984;</kbd> <kbd>&#8679;</kbd> <kbd>P</kbd> and type your code</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Both you and your friend get a <strong>reward</strong></div>
       </div>
     </div>
 
@@ -434,47 +422,28 @@
 
   <script>
     const API_BASE = "https://peekaboo-api.adrialp.workers.dev";
-    const CODE_PATTERN = /^PEEK-[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{5,7}$/;
-    const DOWNLOAD_SVG = '<svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;opacity:0.9"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>';
+    const CODE_PATTERN = /^PEEK-[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{7}$/;
 
     const codeInput = document.getElementById("codeInput");
     const codeBox = document.getElementById("codeBox");
     const codeHint = document.getElementById("codeHint");
-    const actionBtn = document.getElementById("actionBtn");
-    const btnLabel = document.getElementById("btnLabel");
+    const downloadBtn = document.getElementById("downloadBtn");
     let unlocked = false;
     let validating = false;
+    let debounceTimer = null;
     let downloadToken = null;
 
-    // Parse code from URL
+    // Parse code from URL — used for tracking + auto-fill
     const params = new URLSearchParams(window.location.search);
     const urlCode = (params.get("code") || params.get("ref") || "").toUpperCase();
 
     // Track page view
-    amplitude.track('web_page_view', { referral_code: urlCode || null, source: document.referrer || 'direct' });
     if (urlCode && CODE_PATTERN.test(urlCode)) {
       fetch(`${API_BASE}/referral/track`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code: urlCode, event: "page_view" }),
       }).catch(() => {});
-    }
-
-    function updateBtnState() {
-      const val = codeInput.value.toUpperCase();
-      if (unlocked && downloadToken) {
-        actionBtn.className = "download-btn";
-        btnLabel.innerHTML = DOWNLOAD_SVG + ' Download Peekaboo';
-      } else if (CODE_PATTERN.test(val) && !validating) {
-        actionBtn.className = "download-btn";
-        btnLabel.textContent = "Validate Code";
-      } else if (validating) {
-        actionBtn.className = "download-btn disabled";
-        btnLabel.innerHTML = '<span class="spinner"></span> Validating\u2026';
-      } else {
-        actionBtn.className = "download-btn disabled";
-        btnLabel.textContent = "Validate Code";
-      }
     }
 
     // Auto-insert dash after "PEEK"
@@ -493,17 +462,20 @@
       // Reset state while typing
       unlocked = false;
       downloadToken = null;
+      downloadBtn.className = "download-btn disabled";
       codeBox.className = "code-box";
 
+      // Debounce server validation
+      clearTimeout(debounceTimer);
+
       if (CODE_PATTERN.test(val)) {
-        codeHint.textContent = "Press Validate to check your code";
+        codeHint.textContent = "Checking code\u2026";
         codeHint.className = "code-hint";
+        debounceTimer = setTimeout(() => validateCode(val), 300);
       } else {
         codeHint.textContent = val.length > 0 ? "Keep typing\u2026" : "Your friend should have shared a code with you";
         codeHint.className = "code-hint";
       }
-
-      updateBtnState();
     });
 
     codeInput.addEventListener("paste", function() {
@@ -513,22 +485,11 @@
       }, 0);
     });
 
-    // Enter key triggers validate
-    codeInput.addEventListener("keydown", function(e) {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        actionBtn.click();
-      }
-    });
-
     async function validateCode(code) {
       if (validating) return;
       validating = true;
-      updateBtnState();
 
       try {
-        amplitude.track('web_code_entered', { code });
-
         const res = await fetch(`${API_BASE}/referral/validate`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -540,29 +501,26 @@
         // Make sure user hasn't changed the input while we were validating
         if (codeInput.value.toUpperCase() !== code) {
           validating = false;
-          updateBtnState();
           return;
         }
 
         if (data.ok && data.valid && data.download_token) {
-          amplitude.track('web_code_validated', { code, result: 'success' });
           unlocked = true;
           downloadToken = data.download_token;
           codeBox.className = "code-box matched";
           codeHint.textContent = "Code accepted \u2014 download is ready!";
           codeHint.className = "code-hint success";
-        } else if (data.error === "code_already_used") {
-          amplitude.track('web_code_validated', { code, result: data.error });
-          codeBox.className = "code-box error";
-          codeHint.textContent = "This code has already been used";
-          codeHint.className = "code-hint error";
-        } else if (data.error === "unknown_code") {
-          amplitude.track('web_code_validated', { code, result: data.error });
-          codeBox.className = "code-box error";
-          codeHint.textContent = "This invite code doesn\u2019t exist";
-          codeHint.className = "code-hint error";
+          downloadBtn.className = "download-btn";
+
+          // Track successful validation (fills gap between page_view and download_click)
+          fetch(`${API_BASE}/referral/track`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ code, event: "code_validated" }),
+          }).catch(() => {});
         } else {
-          amplitude.track('web_code_validated', { code, result: data.error || 'invalid' });
+          // /referral/validate returns uniform "invalid_code" for all failures
+          // (security: doesn't reveal whether code exists or was already used)
           codeBox.className = "code-box error";
           codeHint.textContent = "Invalid code \u2014 check with your friend";
           codeHint.className = "code-hint error";
@@ -573,37 +531,37 @@
       }
 
       validating = false;
-      updateBtnState();
     }
 
-    // Single CTA: Validate → Download
-    actionBtn.addEventListener("click", function(e) {
+    // Download button — uses one-time token from server
+    downloadBtn.addEventListener("click", function(e) {
       e.preventDefault();
+      if (!unlocked || !downloadToken) return;
 
-      if (unlocked && downloadToken) {
-        // Download mode
-        amplitude.track('web_download_clicked', { code: codeInput.value.toUpperCase() });
-        window.location.href = `${API_BASE}/download?token=${downloadToken}`;
-        return;
+      // Track download_click with sendBeacon to survive page navigation
+      const clickCode = codeInput.value.toUpperCase();
+      const trackPayload = JSON.stringify({ code: clickCode, event: "download_click" });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(`${API_BASE}/referral/track`, new Blob([trackPayload], { type: "application/json" }));
+      } else {
+        fetch(`${API_BASE}/referral/track`, {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: trackPayload,
+        }).catch(() => {});
       }
 
-      // Validate mode
-      const code = codeInput.value.toUpperCase();
-      if (CODE_PATTERN.test(code) && !validating) {
-        validateCode(code);
-      }
+      window.location.href = `${API_BASE}/download?token=${downloadToken}`;
     });
 
-    // Auto-fill and validate if code is in URL
+    // Auto-fill code from URL and trigger validation
     if (urlCode && CODE_PATTERN.test(urlCode)) {
       codeInput.value = urlCode;
-      codeHint.textContent = "Validating your code\u2026";
+      codeHint.textContent = "Checking code\u2026";
       codeHint.className = "code-hint";
       validateCode(urlCode);
     } else if (urlCode) {
+      // Partial or malformed code from URL — fill what we have, let user fix
       codeInput.value = urlCode;
       codeInput.focus();
-      updateBtnState();
     }
   </script>
 </body>
