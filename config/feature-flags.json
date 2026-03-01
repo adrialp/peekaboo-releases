@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "minimum_version": "2.8.28",
+  "minimum_version": "2.8.29",
   "defaults": {
     "screen_time_light": false,
     "screen_time_pro": false,
