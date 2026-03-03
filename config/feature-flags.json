@@ -21,7 +21,8 @@
       "screen_time_pro": true,
       "debug_mode": true,
       "diagnostic_mode": true,
-      "qa_mode": true
+      "qa_mode": true,
+      "poke_send": true
     }
   }
 }
