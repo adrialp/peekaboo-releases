@@ -17,6 +17,7 @@
       "qa_mode": true,
       "connect": true,
       "poke_send": true,
+      "poke_level": 4,
       "achievements": true,
       "share_with_friends": true
     },
@@ -27,6 +28,7 @@
       "diagnostic_mode": true,
       "qa_mode": true,
       "poke_send": true,
+      "poke_level": 3,
       "connect": true,
       "achievements": true
     },
@@ -34,13 +36,21 @@
       "screen_time_light": true,
       "screen_time_pro": true,
       "connect": true,
-      "poke_send": true
+      "poke_send": true,
+      "poke_level": 3
     },
     "b9e38ceda621de3be41e9dd5de6b05e536f9a4d046cbae14354ebc28b612da29": {
       "screen_time_light": true
     },
     "bbc2c8d33031b7b263459512f3eee6ccf3116620e1d2edcd48b182c0b0f428ed": {
       "screen_time_light": true
+    },
+    "6b0a412b94d5111b6b15d50ac0083a4d260309534543faebef31b7c005727693": {
+      "screen_time_light": true,
+      "screen_time_pro": true,
+      "connect": true,
+      "poke_send": true,
+      "poke_level": 3
     }
   }
 }
