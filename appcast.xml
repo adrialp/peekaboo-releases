@@ -17,28 +17,6 @@
                        type="application/octet-stream" />
         </item>
         <item>
-            <title>Version 2.8.35</title>
-            <pubDate>Mon, 02 Mar 2026 12:47:30 +0000</pubDate>
-            <sparkle:version>2.8.35</sparkle:version>
-            <sparkle:shortVersionString>2.8.35</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.35/Peekaboo.dmg"
-                       sparkle:edSignature="YLMqpL50vYsgPLDDpcEy6UYMm/4UJIQC3c008Myo+EWKcqGVdzVhJegryWO2cKkc2EG8tNty35CiuTs5CGkmDw=="
-                       length="8911572"
-                       type="application/octet-stream" />
-        </item>
-        <item>
-            <title>Version 2.8.36</title>
-            <pubDate>Tue, 03 Mar 2026 02:18:21 +0000</pubDate>
-            <sparkle:version>2.8.36</sparkle:version>
-            <sparkle:shortVersionString>2.8.36</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.36/Peekaboo.dmg"
-                       sparkle:edSignature="LJbXt2b5s/hutTNhuRP7wvfb59Y8Bo/wrbRO8/6Mgoj3JLOUns3VPhMAOYbBf1nBuY1yj9TzeBJas0lrUe2IDw=="
-                       length="40026"
-                       type="application/octet-stream" />
-        </item>
-        <item>
             <title>Version 2.8.37</title>
             <pubDate>Tue, 03 Mar 2026 07:42:57 +0000</pubDate>
             <sparkle:version>2.8.37</sparkle:version>
@@ -80,6 +58,17 @@
             <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.40/Peekaboo.dmg"
                        sparkle:edSignature="p5zlQagdlyTbWRqrSGlOamEiMJ0I9sXaVXIBajaEMaD1x1FALj95NQESzVXxbhdLT5UzVzA8FymCf2TNYhERAA=="
                        length="7329492"
+                       type="application/octet-stream" />
+        </item>
+        <item>
+            <title>Version 2.8.41</title>
+            <pubDate>Tue, 03 Mar 2026 20:35:21 +0000</pubDate>
+            <sparkle:version>2.8.41</sparkle:version>
+            <sparkle:shortVersionString>2.8.41</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.41/Peekaboo.dmg"
+                       sparkle:edSignature="f9dRFre2UesNXezZ7MFwt9t9yM5m+bzXICPnoiOJeRpafEy2qNIgYow0ahlA+e5HvUDaVG1sqg/W1VD0waZQDA=="
+                       length="7362770"
                        type="application/octet-stream" />
         </item>
     </channel>
