@@ -36,28 +36,19 @@
       "screen_time_light": true,
       "screen_time_pro": true,
       "connect": true,
-      "connect_ui": true,
-      "debug_mode": true,
-      "diagnostic_mode": true,
-      "qa_mode": true
+      "connect_ui": true
     },
     "b9e38ceda621de3be41e9dd5de6b05e536f9a4d046cbae14354ebc28b612da29": {
       "screen_time_light": true,
       "screen_time_pro": true,
       "connect": true,
-      "connect_ui": true,
-      "debug_mode": true,
-      "diagnostic_mode": true,
-      "qa_mode": true
+      "connect_ui": true
     },
     "bbc2c8d33031b7b263459512f3eee6ccf3116620e1d2edcd48b182c0b0f428ed": {
       "screen_time_light": true,
       "screen_time_pro": true,
       "connect": true,
-      "connect_ui": true,
-      "debug_mode": true,
-      "diagnostic_mode": true,
-      "qa_mode": true
+      "connect_ui": true
     }
   }
 }
