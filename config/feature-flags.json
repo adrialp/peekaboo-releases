@@ -16,7 +16,6 @@
       "diagnostic_mode": true,
       "qa_mode": true,
       "connect": true,
-      "connect_ui": true,
       "poke_send": true,
       "achievements": true,
       "share_with_friends": true
@@ -29,14 +28,12 @@
       "qa_mode": true,
       "poke_send": true,
       "connect": true,
-      "connect_ui": true,
       "achievements": true
     },
     "9c5daecf38cc1f77c89af39966b626b5c1990fcfb742b6d5c54e667c927b20a5": {
       "screen_time_light": true,
       "screen_time_pro": true,
-      "connect": true,
-      "connect_ui": true
+      "connect": true
     },
     "b9e38ceda621de3be41e9dd5de6b05e536f9a4d046cbae14354ebc28b612da29": {
       "screen_time_light": true
