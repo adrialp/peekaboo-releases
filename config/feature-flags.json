@@ -5,7 +5,7 @@
     "screen_time_light": false,
     "screen_time_pro": false,
     "debug_mode": false,
-    "diagnostic_mode": false,
+    "diagnostic_mode": true,
     "achievements": false
   },
   "users": {
