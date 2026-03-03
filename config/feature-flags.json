@@ -14,7 +14,12 @@
       "screen_time_pro": true,
       "debug_mode": true,
       "diagnostic_mode": true,
-      "qa_mode": true
+      "qa_mode": true,
+      "connect": true,
+      "connect_ui": true,
+      "poke_send": true,
+      "achievements": true,
+      "share_with_friends": true
     },
     "bcb9d00685f88edb89d66eaf39b98ce3761d9afe48383066a9bc2966eedac9fa": {
       "screen_time_light": true,
@@ -22,7 +27,10 @@
       "debug_mode": true,
       "diagnostic_mode": true,
       "qa_mode": true,
-      "poke_send": true
+      "poke_send": true,
+      "connect": true,
+      "connect_ui": true,
+      "achievements": true
     }
   }
 }
