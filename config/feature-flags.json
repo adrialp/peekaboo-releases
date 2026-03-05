@@ -48,9 +48,13 @@
     "6b0a412b94d5111b6b15d50ac0083a4d260309534543faebef31b7c005727693": {
       "screen_time_light": true,
       "screen_time_pro": true,
+      "debug_mode": true,
+      "diagnostic_mode": true,
+      "qa_mode": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 3
+      "poke_level": 3,
+      "achievements": true
     }
   }
 }
