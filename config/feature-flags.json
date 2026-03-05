@@ -53,9 +53,7 @@
       "qa_mode": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 3,
-      "achievements": true,
-      "share_with_friends": true
+      "poke_level": 3
     }
   }
 }
