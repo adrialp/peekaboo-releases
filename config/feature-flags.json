@@ -54,7 +54,8 @@
       "connect": true,
       "poke_send": true,
       "poke_level": 3,
-      "achievements": true
+      "achievements": true,
+      "share_with_friends": true
     }
   }
 }
