@@ -67,8 +67,7 @@
             <sparkle:shortVersionString>2.8.44</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.44/Peekaboo.dmg"
-                       sparkle:edSignature="YxkbBpH7nPW83NcjJLfQerWqAD7QWsBygoJiTV4+9JmqHPcdqQAL5zC+Y2EgFW5730WW8QBw3kMbQsdzO6reAQ=="
-                       length="7538380"
+                       sparkle:edSignature="BWZxyM5fAtu0fXwHI9Qsf7vXUHp6oOw26Z934MTBqpBUDlV3bIH+TdtPn8IJq/Ux4BJAmUMRuHnIHbmariNQBg==½39418"
                        type="application/octet-stream" />
         </item>
     </channel>
