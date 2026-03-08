@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "minimum_version": "2.8.44",
-  "notify_version": "2.8.44",
+  "minimum_version": "2.8.45",
+  "notify_version": "2.8.45",
   "defaults": {
     "screen_time_light": false,
     "screen_time_pro": false,
@@ -38,13 +38,19 @@
       "screen_time_pro": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 4
+      "poke_level": 3
     },
     "b9e38ceda621de3be41e9dd5de6b05e536f9a4d046cbae14354ebc28b612da29": {
-      "screen_time_light": true
+      "screen_time_light": true,
+      "connect": true,
+      "poke_send": true,
+      "poke_level": 1
     },
     "bbc2c8d33031b7b263459512f3eee6ccf3116620e1d2edcd48b182c0b0f428ed": {
-      "screen_time_light": true
+      "screen_time_light": true,
+      "connect": true,
+      "poke_send": true,
+      "poke_level": 1
     },
     "6b0a412b94d5111b6b15d50ac0083a4d260309534543faebef31b7c005727693": {
       "screen_time_light": true,
@@ -54,7 +60,7 @@
       "qa_mode": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 3
+      "poke_level": 4
     }
   }
 }
