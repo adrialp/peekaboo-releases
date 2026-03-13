@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "minimum_version": "2.8.49",
-  "notify_version": "2.8.49",
+  "minimum_version": "2.8.50",
+  "notify_version": "2.8.50",
   "defaults": {
     "screen_time_light": false,
     "screen_time_pro": false,
@@ -50,7 +50,7 @@
       "screen_time_light": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 1
+      "poke_level": 2
     },
     "6b0a412b94d5111b6b15d50ac0083a4d260309534543faebef31b7c005727693": {
       "screen_time_light": true,
