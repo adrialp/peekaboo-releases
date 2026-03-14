@@ -3,11 +3,14 @@
   "minimum_version": "2.8.51",
   "notify_version": "2.8.51",
   "defaults": {
-    "screen_time_light": false,
+    "screen_time_light": true,
     "screen_time_pro": false,
     "debug_mode": false,
     "diagnostic_mode": true,
-    "achievements": false
+    "achievements": false,
+    "connect": true,
+    "poke_send": true,
+    "poke_level": 1
   },
   "users": {
     "3d45f7870fc9e6cfe97710d67f2e077007a3975d3334d7aa0d8e124e467a17f8": {
@@ -18,7 +21,7 @@
       "qa_mode": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 4,
+      "poke_level": 5,
       "achievements": true,
       "share_with_friends": true
     },
@@ -44,7 +47,7 @@
       "screen_time_light": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 1
+      "poke_level": 2
     },
     "bbc2c8d33031b7b263459512f3eee6ccf3116620e1d2edcd48b182c0b0f428ed": {
       "screen_time_light": true,
@@ -60,7 +63,7 @@
       "qa_mode": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 4
+      "poke_level": 5
     }
   }
 }
