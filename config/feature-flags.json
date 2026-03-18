@@ -66,6 +66,12 @@
       "connect": true,
       "poke_send": true,
       "poke_level": 5
+    },
+    "06b1e6632cc46b640169903fc68f48988494e59be114db28b472bc4da875c861": {
+      "screen_time_light": true,
+      "connect": true,
+      "poke_send": true,
+      "poke_level": 2
     }
   }
 }
