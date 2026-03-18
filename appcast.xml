@@ -60,16 +60,17 @@
                        length="8139889"
                        type="application/octet-stream" />
         </item>
-        <item>
-            <title>Version 2.8.56</title>
-            <pubDate>Tue, 17 Mar 2026 23:48:52 +0000</pubDate>
-            <sparkle:version>2.8.56</sparkle:version>
-            <sparkle:shortVersionString>2.8.56</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.56/Peekaboo.dmg"
-                       sparkle:edSignature="VIht7YD6Xk8oUsNNBYpolaA1V8spu+OJ4hQKj3sN4SzcyNe41ZZUIEsr5g1mL6Auvl7LEFkAlnTq2p+qqOFADQ=="
-                       length="8147494"
-                       type="application/octet-stream" />
+                <item>
+            <title>Version 2.8.57</title>
+            <pubDate>Wed, 18 Mar 2026 01:19:22 +0100</pubDate>
+            <sparkle:version>2.8.57</sparkle:version>
+            <sparkle:shortVersionString>2.8.57</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<ul><li>Accelerometer impact detection + lid creak sound</li></ul>]]></description>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.57/Peekaboo.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="jstVDpfRQCQHxEXJnV2Htu3aYwVaCRHLYAUgzaxHr5MQ/3gVe1+qlYHMXMZcpXlPkJ1owRxRzUZPGAojvZHIDQ=="
+                       length="7593917" />
         </item>
     </channel>
 </rss>
