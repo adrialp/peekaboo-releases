@@ -25,7 +25,8 @@
       "poke_level": 5,
       "achievements": true,
       "share_with_friends": true,
-      "share_unlimited": true
+      "share_unlimited": true,
+      "minigames": true
     },
     "bcb9d00685f88edb89d66eaf39b98ce3761d9afe48383066a9bc2966eedac9fa": {
       "screen_time_light": true,
@@ -36,7 +37,8 @@
       "poke_send": true,
       "poke_level": 3,
       "connect": true,
-      "achievements": true
+      "achievements": true,
+      "minigames": true
     },
     "9c5daecf38cc1f77c89af39966b626b5c1990fcfb742b6d5c54e667c927b20a5": {
       "screen_time_light": true,
@@ -65,7 +67,8 @@
       "qa_mode": true,
       "connect": true,
       "poke_send": true,
-      "poke_level": 5
+      "poke_level": 5,
+      "minigames": true
     },
     "06b1e6632cc46b640169903fc68f48988494e59be114db28b472bc4da875c861": {
       "screen_time_light": true,
