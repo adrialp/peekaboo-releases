@@ -17,17 +17,6 @@
                        type="application/octet-stream" />
         </item>
         <item>
-            <title>Version 2.8.75</title>
-            <pubDate>Fri, 20 Mar 2026 23:26:21 +0000</pubDate>
-            <sparkle:version>2.8.75</sparkle:version>
-            <sparkle:shortVersionString>2.8.75</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.75/Peekaboo.dmg"
-                       sparkle:edSignature="xn/8wl9YhW7hVQEOXuihfR+/QBpf9lf21SfKa08Q5f9uxez1MV8WJXfkQfjDnjtzRhwVtDV3XU99lojrn6cZCg=="
-                       length="8486111"
-                       type="application/octet-stream" />
-        </item>
-        <item>
             <title>Version 2.8.76</title>
             <pubDate>Fri, 20 Mar 2026 23:43:24 +0000</pubDate>
             <sparkle:version>2.8.76</sparkle:version>
@@ -69,6 +58,17 @@
             <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.79/Peekaboo.dmg"
                        sparkle:edSignature="RsZx7Yy5BHNgSKEb/N9S8Q0HsofUFaAKYE7BGll7EouHMu8xFcpehm4pXCFXlo2Hr/ca5k1khwjNUbtSpF4PAA=="
                        length="8486797"
+                       type="application/octet-stream" />
+        </item>
+        <item>
+            <title>Version 2.8.80</title>
+            <pubDate>Sat, 21 Mar 2026 00:46:56 +0000</pubDate>
+            <sparkle:version>2.8.80</sparkle:version>
+            <sparkle:shortVersionString>2.8.80</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.80/Peekaboo.dmg"
+                       sparkle:edSignature="nOvXPNnc0d0gzMvKsEQDbjWaeyCv44CdgXPzHWoEehDnMCNwFVQRgBhCX1KIFiCCXe3f1LUPcRChxzFUASyNAA=="
+                       length="8487256"
                        type="application/octet-stream" />
         </item>
     </channel>
