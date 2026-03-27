@@ -11,7 +11,12 @@
     "connect": true,
     "poke_send": true,
     "poke_level": 1,
-    "share_unlimited": false
+    "share_with_friends": true,
+    "share_unlimited": false,
+    "battleship": false,
+    "poke_rate_enabled": false,
+    "poke_rate_max": 5,
+    "poke_rate_cooldown": 10
   },
   "users": {
     "3d45f7870fc9e6cfe97710d67f2e077007a3975d3334d7aa0d8e124e467a17f8": {
