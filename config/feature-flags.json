@@ -35,7 +35,6 @@
     },
     "bcb9d00685f88edb89d66eaf39b98ce3761d9afe48383066a9bc2966eedac9fa": {
       "screen_time_light": true,
-      "screen_time_pro": true,
       "debug_mode": true,
       "diagnostic_mode": true,
       "qa_mode": true,
@@ -47,7 +46,6 @@
     },
     "9c5daecf38cc1f77c89af39966b626b5c1990fcfb742b6d5c54e667c927b20a5": {
       "screen_time_light": true,
-      "screen_time_pro": true,
       "connect": true,
       "poke_send": true,
       "poke_level": 3
