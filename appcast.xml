@@ -17,17 +17,6 @@
                        type="application/octet-stream" />
         </item>
         <item>
-            <title>Version 2.8.90</title>
-            <pubDate>Sun, 22 Mar 2026 00:50:22 +0000</pubDate>
-            <sparkle:version>2.8.90</sparkle:version>
-            <sparkle:shortVersionString>2.8.90</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.8.90/Peekaboo.dmg"
-                       sparkle:edSignature="N/dppaEPLR5KqIkYxljXgkrUDJYkylZ+JAEyMG/1TF8c7adGB/BSG9I6FOrrCRPDHZBA2u4M28vy7WQQ26PfCg=="
-                       length="8501617"
-                       type="application/octet-stream" />
-        </item>
-        <item>
             <title>Version 2.8.91</title>
             <pubDate>Sun, 22 Mar 2026 01:16:59 +0000</pubDate>
             <sparkle:version>2.8.91</sparkle:version>
@@ -69,6 +58,17 @@
             <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.9.0/Peekaboo.dmg"
                        sparkle:edSignature="KjjSOlQKAAWtwRf1niyCPGCUo65P/JQf1zA9NAlj1t1gldZs9f3sd7HLYEMrrSSlp1j64KgBWxZdylmcbKo+BQ=="
                        length="8767782"
+                       type="application/octet-stream" />
+        </item>
+        <item>
+            <title>Version 2.9.1</title>
+            <pubDate>Fri, 27 Mar 2026 17:34:18 +0000</pubDate>
+            <sparkle:version>2.9.1</sparkle:version>
+            <sparkle:shortVersionString>2.9.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.9.1/Peekaboo.dmg"
+                       sparkle:edSignature="JnlTPCqJxAmDK8g0eA+LvwdSYxEzQkk/sfyRZx+pQA3Ih8iL7Q7pjxjjqoVZjlayK+UFmW3dr/pSjegBS4toDQ=="
+                       length="8778020"
                        type="application/octet-stream" />
         </item>
     </channel>
