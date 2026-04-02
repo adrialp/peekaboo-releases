@@ -17,17 +17,6 @@
                        type="application/octet-stream" />
         </item>
         <item>
-            <title>Version 2.9.4</title>
-            <pubDate>Mon, 30 Mar 2026 07:46:14 +0000</pubDate>
-            <sparkle:version>2.9.4</sparkle:version>
-            <sparkle:shortVersionString>2.9.4</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.9.4/Peekaboo.dmg"
-                       sparkle:edSignature="45ajM/oP7c+TmgUiQSkVgL1sKXvwXcj64sAOSD1EgX2Zi1KCScTIpO8AkCiflK3W3e119pwkWraEF8ZP0dQJAg=="
-                       length="9278310"
-                       type="application/octet-stream" />
-        </item>
-        <item>
             <title>Version 2.9.5</title>
             <pubDate>Mon, 30 Mar 2026 08:08:48 +0000</pubDate>
             <sparkle:version>2.9.5</sparkle:version>
@@ -69,6 +58,17 @@
             <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.9.8/Peekaboo.dmg"
                        sparkle:edSignature="/EBPIXgWq9fBDG2bgEFyO4rUruTb9nHoxTSaMV7Ds9tfBaI5JK1CgCatQOMgr8Z9JXoXHPaEpO6KWQQdUEqFDg=="
                        length="9391835"
+                       type="application/octet-stream" />
+        </item>
+        <item>
+            <title>Version 2.9.9</title>
+            <pubDate>Thu, 02 Apr 2026 22:55:43 +0000</pubDate>
+            <sparkle:version>2.9.9</sparkle:version>
+            <sparkle:shortVersionString>2.9.9</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.9.9/Peekaboo.dmg"
+                       sparkle:edSignature="PHrQzuyisCAdq+1xX/a8rNkBFZc7Utm9VZkBKx5WJmoBWJplfXbw3aN9aT/RBrFi4y/1hjVACxk+Gssiaiy3Cg=="
+                       length="9425092"
                        type="application/octet-stream" />
         </item>
     </channel>
