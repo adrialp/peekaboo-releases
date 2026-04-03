@@ -13,6 +13,7 @@
     "poke_level": 1,
     "share_with_friends": true,
     "share_unlimited": false,
+    "games": false,
     "battleship": false,
     "poke_rate_enabled": false,
     "poke_rate_max": 5,
@@ -31,6 +32,7 @@
       "achievements": true,
       "share_with_friends": true,
       "share_unlimited": true,
+      "games": true,
       "battleship": true
     },
     "6b0a412b94d5111b6b15d50ac0083a4d260309534543faebef31b7c005727693": {
@@ -45,6 +47,7 @@
       "achievements": true,
       "share_with_friends": true,
       "share_unlimited": true,
+      "games": true,
       "battleship": true
     },
     "bcb9d00685f88edb89d66eaf39b98ce3761d9afe48383066a9bc2966eedac9fa": {
@@ -59,6 +62,7 @@
       "achievements": true,
       "share_with_friends": true,
       "share_unlimited": true,
+      "games": true,
       "battleship": true,
       "grant_premium": true
     },
