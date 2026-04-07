@@ -1,105 +1,105 @@
 {
-  "version": 2,
-  "minimum_version": "2.9.10",
-  "notify_version": "2.9.10",
-  "defaults": {
-    "screen_time_light": true,
-    "screen_time_pro": false,
-    "debug_mode": false,
-    "diagnostic_mode": true,
-    "achievements": false,
-    "connect": true,
-    "poke_send": true,
-    "poke_level": 1,
-    "share_with_friends": true,
-    "share_unlimited": false,
-    "games": false,
-    "battleship": false,
-    "poke_rate_enabled": false,
-    "poke_rate_max": 5,
-    "poke_rate_cooldown": 10
-  },
-  "users": {
-    "3d45f7870fc9e6cfe97710d67f2e077007a3975d3334d7aa0d8e124e467a17f8": {
-      "screen_time_light": true,
-      "screen_time_pro": true,
-      "debug_mode": true,
-      "diagnostic_mode": true,
-      "qa_mode": true,
-      "connect": true,
-      "poke_send": true,
-      "poke_level": 5,
-      "achievements": true,
-      "share_with_friends": true,
-      "share_unlimited": true,
-      "games": true,
-      "battleship": true
+    "version": 2,
+    "minimum_version": "2.9.15",
+    "notify_version": "2.9.15",
+    "defaults": {
+        "screen_time_light": true,
+        "screen_time_pro": false,
+        "debug_mode": false,
+        "diagnostic_mode": true,
+        "achievements": false,
+        "connect": true,
+        "poke_send": true,
+        "poke_level": 1,
+        "share_with_friends": true,
+        "share_unlimited": false,
+        "games": false,
+        "battleship": false,
+        "poke_rate_enabled": false,
+        "poke_rate_max": 5,
+        "poke_rate_cooldown": 10
     },
-    "6b0a412b94d5111b6b15d50ac0083a4d260309534543faebef31b7c005727693": {
-      "screen_time_light": true,
-      "screen_time_pro": true,
-      "debug_mode": true,
-      "diagnostic_mode": true,
-      "qa_mode": true,
-      "connect": true,
-      "poke_send": true,
-      "poke_level": 5,
-      "achievements": true,
-      "share_with_friends": true,
-      "share_unlimited": true,
-      "games": true,
-      "battleship": true
-    },
-    "bcb9d00685f88edb89d66eaf39b98ce3761d9afe48383066a9bc2966eedac9fa": {
-      "screen_time_light": true,
-      "screen_time_pro": true,
-      "debug_mode": true,
-      "diagnostic_mode": true,
-      "qa_mode": true,
-      "poke_send": true,
-      "poke_level": 3,
-      "connect": true,
-      "achievements": true,
-      "share_with_friends": true,
-      "share_unlimited": true,
-      "games": true,
-      "battleship": true,
-      "grant_premium": true
-    },
-    "9c5daecf38cc1f77c89af39966b626b5c1990fcfb742b6d5c54e667c927b20a5": {
-      "screen_time_light": true,
-      "connect": true,
-      "poke_send": true,
-      "poke_level": 3,
-      "grant_premium": true
-    },
-    "b9e38ceda621de3be41e9dd5de6b05e536f9a4d046cbae14354ebc28b612da29": {
-      "screen_time_light": true,
-      "connect": true,
-      "poke_send": true,
-      "poke_level": 2,
-      "grant_premium": true
-    },
-    "bbc2c8d33031b7b263459512f3eee6ccf3116620e1d2edcd48b182c0b0f428ed": {
-      "screen_time_light": true,
-      "connect": true,
-      "poke_send": true,
-      "poke_level": 2,
-      "grant_premium": true
-    },
-    "06b1e6632cc46b640169903fc68f48988494e59be114db28b472bc4da875c861": {
-      "screen_time_light": true,
-      "connect": true,
-      "poke_send": true,
-      "poke_level": 2,
-      "grant_premium": true
-    },
-    "74b9987a952c5e295fb15fca07b43dfde695ca20e7aa68fc9ede9f6e4b4c25ac": {
-      "screen_time_light": true,
-      "connect": true,
-      "poke_send": true,
-      "poke_level": 2,
-      "grant_premium": true
+    "users": {
+        "3d45f7870fc9e6cfe97710d67f2e077007a3975d3334d7aa0d8e124e467a17f8": {
+            "screen_time_light": true,
+            "screen_time_pro": true,
+            "debug_mode": true,
+            "diagnostic_mode": true,
+            "qa_mode": true,
+            "connect": true,
+            "poke_send": true,
+            "poke_level": 5,
+            "achievements": true,
+            "share_with_friends": true,
+            "share_unlimited": true,
+            "games": true,
+            "battleship": true
+        },
+        "6b0a412b94d5111b6b15d50ac0083a4d260309534543faebef31b7c005727693": {
+            "screen_time_light": true,
+            "screen_time_pro": true,
+            "debug_mode": true,
+            "diagnostic_mode": true,
+            "qa_mode": true,
+            "connect": true,
+            "poke_send": true,
+            "poke_level": 5,
+            "achievements": true,
+            "share_with_friends": true,
+            "share_unlimited": true,
+            "games": true,
+            "battleship": true
+        },
+        "bcb9d00685f88edb89d66eaf39b98ce3761d9afe48383066a9bc2966eedac9fa": {
+            "screen_time_light": true,
+            "screen_time_pro": true,
+            "debug_mode": true,
+            "diagnostic_mode": true,
+            "qa_mode": true,
+            "poke_send": true,
+            "poke_level": 3,
+            "connect": true,
+            "achievements": true,
+            "share_with_friends": true,
+            "share_unlimited": true,
+            "games": true,
+            "battleship": true,
+            "grant_premium": true
+        },
+        "9c5daecf38cc1f77c89af39966b626b5c1990fcfb742b6d5c54e667c927b20a5": {
+            "screen_time_light": true,
+            "connect": true,
+            "poke_send": true,
+            "poke_level": 3,
+            "grant_premium": true
+        },
+        "b9e38ceda621de3be41e9dd5de6b05e536f9a4d046cbae14354ebc28b612da29": {
+            "screen_time_light": true,
+            "connect": true,
+            "poke_send": true,
+            "poke_level": 2,
+            "grant_premium": true
+        },
+        "bbc2c8d33031b7b263459512f3eee6ccf3116620e1d2edcd48b182c0b0f428ed": {
+            "screen_time_light": true,
+            "connect": true,
+            "poke_send": true,
+            "poke_level": 2,
+            "grant_premium": true
+        },
+        "06b1e6632cc46b640169903fc68f48988494e59be114db28b472bc4da875c861": {
+            "screen_time_light": true,
+            "connect": true,
+            "poke_send": true,
+            "poke_level": 2,
+            "grant_premium": true
+        },
+        "74b9987a952c5e295fb15fca07b43dfde695ca20e7aa68fc9ede9f6e4b4c25ac": {
+            "screen_time_light": true,
+            "connect": true,
+            "poke_send": true,
+            "poke_level": 2,
+            "grant_premium": true
+        }
     }
-  }
 }
