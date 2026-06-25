@@ -63,6 +63,8 @@
             "share_with_friends": true,
             "share_unlimited": true,
             "games": true,
+            "word_chain": true,
+            "word_association": true,
             "battleship": true,
             "grant_premium": true
         },
