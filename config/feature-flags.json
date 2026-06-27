@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "minimum_version": "2.16.2",
-  "notify_version": "2.16.2",
+  "minimum_version": "2.16.3",
+  "notify_version": "2.16.3",
   "defaults": {
     "screen_time_light": true,
     "screen_time_pro": false,
