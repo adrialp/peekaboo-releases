@@ -6,35 +6,14 @@
         <description>Peekaboo updates</description>
         <language>en</language>
         <item>
-            <title>Version 2.17.5</title>
-            <pubDate>Thu, 02 Jul 2026 12:49:18 +0000</pubDate>
-            <description><![CDATA[
-<div style="font-family: -apple-system, sans-serif; font-size: 13px; line-height: 1.5;">
-<h2 style="font-size: 15px;">🙏 Fe de erratas</h2>
-<p>Ayer, en Palabras Encadenadas, os pedimos adivinar <b>«cremall»</b>… una palabra que no existe
-(era <b>«cremallera»</b>, cortada por un error nuestro al generar el diccionario del juego).
-Sentimos el mal rato — esa partida era injugable y no era culpa vuestra.</p>
-<p>Para que no vuelva a pasar, hemos revisado <b>las 4.000+ palabras y pistas del juego</b>:
-36 palabras truncadas o inexistentes corregidas, además de cientos de pistas que delataban
-la respuesta. Palabras juega limpio a partir de hoy.</p>
-
-<h2 style="font-size: 15px;">✨ Además, en esta versión</h2>
-<ul>
-<li><b>Sílabas estrena casillas por letra</b>: ves cuántas letras tiene la palabra y la sílaba
-inicial ya viene puesta — solo completas el resto.</li>
-<li>Historial de 11:11 más claro (medallas 🥇🥈🥉 y meses cerrados).</li>
-<li>Opción de ver los nombres de tus amigos con mayúscula inicial (Ajustes → Connect).</li>
-<li>Mejoras internas de estabilidad y sincronización.</li>
-</ul>
-<p>Gracias por jugar y por avisar cuando algo chirría. — El equipo de Peekaboo 👀</p>
-</div>
-            ]]></description>
-            <sparkle:version>2.17.5</sparkle:version>
-            <sparkle:shortVersionString>2.17.5</sparkle:shortVersionString>
+            <title>Version 2.18.0</title>
+            <pubDate>Fri, 03 Jul 2026 00:16:27 +0000</pubDate>
+            <sparkle:version>2.18.0</sparkle:version>
+            <sparkle:shortVersionString>2.18.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.17.5/Peekaboo.dmg"
-                       sparkle:edSignature="I4mXi+NLAiMUXhcnRu0h1p8LrJt1urrftxlX8d1B3vRWKpRtw44MHidMcNNz/pBk7Hz6zPhdp4K99dKGQdoPCA=="
-                       length="11054546"
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.18.0/Peekaboo.dmg"
+                       sparkle:edSignature="9QJGFhWoor2uXHNfp/huh64Uy08JGBfgTCj63bCRz9H6cnwLSha5s55B/IeLP4o/vDNSgyX/362blcH6noFlCQ=="
+                       length="11080695"
                        type="application/octet-stream" />
         </item>
     </channel>
