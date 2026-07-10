@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "minimum_version": "2.18.0",
-  "notify_version": "2.18.0",
+  "minimum_version": "2.19.0",
+  "notify_version": "2.19.0",
   "defaults": {
     "screen_time_light": true,
     "screen_time_pro": false,
@@ -13,7 +13,7 @@
     "poke_level": 1,
     "share_with_friends": true,
     "share_unlimited": false,
-    "games": false,
+    "games": true,
     "battleship": false,
     "poke_rate_enabled": false,
     "poke_rate_max": 5,
@@ -63,7 +63,6 @@
       "share_with_friends": true,
       "share_unlimited": true,
       "games": true,
-      "word_chain": true,
       "word_association": true,
       "battleship": true,
       "grant_premium": true
