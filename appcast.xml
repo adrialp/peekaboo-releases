@@ -6,14 +6,30 @@
         <description>Peekaboo updates</description>
         <language>en</language>
         <item>
-            <title>Version 2.18.0</title>
-            <pubDate>Fri, 03 Jul 2026 00:16:27 +0000</pubDate>
-            <sparkle:version>2.18.0</sparkle:version>
-            <sparkle:shortVersionString>2.18.0</sparkle:shortVersionString>
+            <title>Version 2.19.0</title>
+            <pubDate>Fri, 10 Jul 2026 06:40:14 +0000</pubDate>
+            <description><![CDATA[
+<div style="font-family: -apple-system, sans-serif; font-size: 13px; line-height: 1.5;">
+<h2 style="font-size: 15px;">🙏 Corrección del 11:11</h2>
+<p>El pasado día 8, a las 11:11, a algunos os pasó que el punto <b>no desaparecía al tocarlo</b> y
+la única forma de quitarlo era cerrar la app. Que quede claro: <b>vuestra reacción sí se guardó</b>
+(no perdisteis ni racha ni tiempo) — era solo un punto fantasma que se quedaba en pantalla.</p>
+<p>Ya está arreglado. Era un despiste nuestro: en algún caso se dibujaban dos puntos superpuestos y,
+al tocar uno, el otro se quedaba huérfano. A partir de ahora el punto desaparece limpio en cuanto lo
+tocáis. Sentimos el mal rato del otro día.</p>
+
+<h2 style="font-size: 15px;">✨ Y bastante más</h2>
+<p>Esta versión trae también un buen puñado de mejoras por toda la app. Si tienes curiosidad, las
+tienes detalladas en el historial de cambios dentro de Peekaboo.</p>
+<p>Gracias por jugar y por avisar cuando algo chirría. — El equipo de Peekaboo 👀</p>
+</div>
+            ]]></description>
+            <sparkle:version>2.19.0</sparkle:version>
+            <sparkle:shortVersionString>2.19.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.18.0/Peekaboo.dmg"
-                       sparkle:edSignature="9QJGFhWoor2uXHNfp/huh64Uy08JGBfgTCj63bCRz9H6cnwLSha5s55B/IeLP4o/vDNSgyX/362blcH6noFlCQ=="
-                       length="11080695"
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.19.0/Peekaboo.dmg"
+                       sparkle:edSignature="GtezMXWRY2m19XMJJr+B/MZvsr2NYjc1l7DrVvVpZ9jrS2Sv+mgA0/IosWoS4E7eJY+yniNZ0vBu2G16R+s8Ag=="
+                       length="12123351"
                        type="application/octet-stream" />
         </item>
     </channel>
