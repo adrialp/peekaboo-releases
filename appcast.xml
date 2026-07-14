@@ -6,30 +6,28 @@
         <description>Peekaboo updates</description>
         <language>en</language>
         <item>
-            <title>Version 2.19.0</title>
-            <pubDate>Fri, 10 Jul 2026 06:40:14 +0000</pubDate>
+            <title>Version 2.20.0</title>
+            <pubDate>Tue, 14 Jul 2026 13:26:21 +0000</pubDate>
             <description><![CDATA[
-<div style="font-family: -apple-system, sans-serif; font-size: 13px; line-height: 1.5;">
-<h2 style="font-size: 15px;">🙏 Corrección del 11:11</h2>
-<p>El pasado día 8, a las 11:11, a algunos os pasó que el punto <b>no desaparecía al tocarlo</b> y
-la única forma de quitarlo era cerrar la app. Que quede claro: <b>vuestra reacción sí se guardó</b>
-(no perdisteis ni racha ni tiempo) — era solo un punto fantasma que se quedaba en pantalla.</p>
-<p>Ya está arreglado. Era un despiste nuestro: en algún caso se dibujaban dos puntos superpuestos y,
-al tocar uno, el otro se quedaba huérfano. A partir de ahora el punto desaparece limpio en cuanto lo
-tocáis. Sentimos el mal rato del otro día.</p>
-
-<h2 style="font-size: 15px;">✨ Y bastante más</h2>
-<p>Esta versión trae también un buen puñado de mejoras por toda la app. Si tienes curiosidad, las
-tienes detalladas en el historial de cambios dentro de Peekaboo.</p>
-<p>Gracias por jugar y por avisar cuando algo chirría. — El equipo de Peekaboo 👀</p>
+<div style="font-family: -apple-system, system-ui, sans-serif; color:#1d1d1f; line-height:1.5;">
+  <h2 style="margin:0 0 6px; font-size:17px;">🎮 Los juegos, rediseñados</h2>
+  <p style="margin:0 0 10px; font-size:13px; color:#555;">Hemos repensado cómo se ven y se sienten los juegos diarios.</p>
+  <ul style="margin:0 0 14px; padding-left:18px; font-size:13px;">
+    <li>Un color propio para cada juego: Prism, 11:11, Palabras, Cronos y Atlas.</li>
+    <li>Nueva pantalla al terminar, con tu tiempo, tu racha y un botón para compartir el resultado.</li>
+    <li>El menú de juegos, más claro: lo que te queda por jugar primero y lo ya jugado, a un lado.</li>
+  </ul>
+  <hr style="border:none; border-top:1px solid #ececec; margin:12px 0;">
+  <h3 style="margin:0 0 4px; font-size:14px;">🎮 Games, redesigned</h3>
+  <p style="margin:0; font-size:12px; color:#666;">Each daily game now has its own colour, a shareable results screen with your time and streak, and a cleaner menu that puts what's left to play first.</p>
 </div>
             ]]></description>
-            <sparkle:version>2.19.0</sparkle:version>
-            <sparkle:shortVersionString>2.19.0</sparkle:shortVersionString>
+            <sparkle:version>2.20.0</sparkle:version>
+            <sparkle:shortVersionString>2.20.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.19.0/Peekaboo.dmg"
-                       sparkle:edSignature="GtezMXWRY2m19XMJJr+B/MZvsr2NYjc1l7DrVvVpZ9jrS2Sv+mgA0/IosWoS4E7eJY+yniNZ0vBu2G16R+s8Ag=="
-                       length="12123351"
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.20.0/Peekaboo.dmg"
+                       sparkle:edSignature="bGbPkNYIPGOZQlLOsJJd89XL8xPkNaFoWdMlm2Ucyp/Kap6O/kxVYI1RHJZyWSVSZOOOtPXJV6mwCCQDuIijDQ=="
+                       length="12317155"
                        type="application/octet-stream" />
         </item>
     </channel>
