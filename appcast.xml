@@ -6,14 +6,14 @@
         <description>Peekaboo updates</description>
         <language>en</language>
         <item>
-            <title>Version 2.21.0</title>
-            <pubDate>Fri, 17 Jul 2026 15:03:27 +0000</pubDate>
-            <sparkle:version>2.21.0</sparkle:version>
-            <sparkle:shortVersionString>2.21.0</sparkle:shortVersionString>
+            <title>Version 2.22.0</title>
+            <pubDate>Sun, 19 Jul 2026 23:51:20 +0000</pubDate>
+            <sparkle:version>2.22.0</sparkle:version>
+            <sparkle:shortVersionString>2.22.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.21.0/Peekaboo.dmg"
-                       sparkle:edSignature="5JwgqELrqpaANCVvI/jjEYTW7TmteHmQMVCS3JvyHblLqe9zEANnAWRq/KSqN7pYFAcJOQn4sEsRB4ULbRA9Dg=="
-                       length="12353665"
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.22.0/Peekaboo.dmg"
+                       sparkle:edSignature="Nob/wo9oqRuWxdRqRLpfygqKpnCzFLV+BsXu6ePZnMBhxQH6tQ+oRk+n/eB6ERR29dfTp2YQ7GlkfMErj40tBg=="
+                       length="12477358"
                        type="application/octet-stream" />
         </item>
     </channel>
