@@ -6,26 +6,14 @@
         <description>Peekaboo updates</description>
         <language>en</language>
         <item>
-            <title>Version 2.26.0</title>
-            <pubDate>Fri, 07 Aug 2026 17:06:53 +0000</pubDate>
-            <description><![CDATA[
-<div style="font-family: -apple-system, sans-serif; font-size: 13px; line-height: 1.5;">
-  <h2 style="font-size: 16px; margin: 0 0 8px;">Three new daily games 🎉</h2>
-  <p style="margin: 0 0 10px;">The biggest games drop yet — three brand-new dailies join the family:</p>
-  <ul style="margin: 0 0 10px; padding-left: 20px;">
-    <li><b>Enigma</b> — guess the secret famous person. Flip yes/no question tiles, spend them wisely, and name them in three tries. Includes a training mode to learn the ropes.</li>
-    <li><b>Eras</b> — put five historical events in order on the timeline. The first check is free; every extra one costs you.</li>
-    <li><b>Rebus</b> — three emoji riddles a day: a saying, a film and a song. Decode them in sequence, buy hints if you get stuck.</li>
-  </ul>
-  <p style="margin: 0;">Same daily rhythm as always: one challenge per day, shared with everyone, rankings with your friends. Have fun — and tell us what you think from the feedback menu!</p>
-</div>
-            ]]></description>
-            <sparkle:version>2.26.0</sparkle:version>
-            <sparkle:shortVersionString>2.26.0</sparkle:shortVersionString>
+            <title>Version 2.26.1</title>
+            <pubDate>Sat, 08 Aug 2026 17:28:56 +0000</pubDate>
+            <sparkle:version>2.26.1</sparkle:version>
+            <sparkle:shortVersionString>2.26.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.26.0/Peekaboo.dmg"
-                       sparkle:edSignature="zTO9sAAaP/GbTKGMUX6/it2bAkTkSMw0Rpf3bwIFY0AA/KqG/hdNW122g7Xdw5CYLXSCukvN9BB+dGrib67LCg=="
-                       length="13985839"
+            <enclosure url="https://github.com/adrialp/peekaboo-releases/releases/download/v2.26.1/Peekaboo.dmg"
+                       sparkle:edSignature="p5xm53NtGECC+Y5ax+7ITMKWZxv4HxzU9Ibn+9Y3qWKs4gV5qBS8e1UbmyAi9nMhCM6jWhtkFEwHZVCgj0ooCw=="
+                       length="14055200"
                        type="application/octet-stream" />
         </item>
     </channel>
